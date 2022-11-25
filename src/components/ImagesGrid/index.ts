@@ -1,0 +1,1 @@
+export { ImagesGrid } from "./ImagesGrid";

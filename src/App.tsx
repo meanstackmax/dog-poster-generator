@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import theme from "./theme";
+import DogPoster from "pages/DogPoster";
+import { Provider as StoreProvider } from "react-redux";
+import { ThemeProvider } from "@mui/material";
+import store from "store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StoreProvider store={store}>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <DogPoster />
+        </div>
+      </ThemeProvider>
+    </StoreProvider>
   );
 }
 
